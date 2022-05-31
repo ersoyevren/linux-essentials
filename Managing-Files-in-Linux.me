@@ -131,3 +131,96 @@ tac clarusway.txt
 ```bash
 tac clarusway.txt > reverse-clarusway.txt
 ```
+## Part 2 - Searching Files
+
+### `find` command
+
+- Find all the files whose name is clarusway.txt in a current working directory.
+
+```bash
+find . -name clarusway.txt
+```
+
+- Find all the files under /home directory with name clarusway.txt.
+
+```bash
+find /home -name clarusway.txt
+```
+
+- Find all the files whose name is clarusway.txt and contains both capital and small letters in /home directory.
+
+```bash
+find /home -iname clarusway.txt
+```
+
+- Find all directories whose name is linux-lessons in /home directory.
+
+```bash
+find /home -type d -name linux-lessons
+```
+
+- Find all txt files in the working directory.
+
+```bash
+find . -type f -name "*.txt"
+```
+
+- Find all empty files in the working directory.
+
+```bash
+find . -type f -empty
+```
+
+- Find all empty files in the /home directory.
+
+```bash
+find /home -type f -empty
+```
+
+- To find all 100MB files under home directory. 
+
+```bash
+find /home -size 100M
+```
+
+- Find all the files which are greater than 50MB and less than 100MB under home directory. Note that the `+` and `-` prefixes signify greater than and less than.
+
+```bash
+find /home -size +50M -size -100M
+```
+
+- Find all the files which are modified 10 days ago in /home directory.
+
+```bash
+find /home -mtime 10
+```
+
+- Find all the files which are modified in the last 10 days in /home directory.
+
+```bash
+find /home -mtime -10
+```
+
+- Find all the files which are modified in more than 10 days in /home directory.
+
+```bash
+find /home -mtime +10
+```
+
+- Find all the files which are modified more than 10 minutes back and less than 30 minutes in current folder.
+
+```bash
+find . -mmin +10 -mmin -30
+```
+
+### `grep` command
+
+Grep is a Linux / Unix command-line tool used to search for a string of characters in a specified file. 
+
+- Create a file and name it `grep.txt`.
+
+```txt
+grep  searches  for  PATTERNS  in  each  FILE.
+PATTERNS  is  one  or more patterns separated by newline characters, and grep prints each line that matches a pattern.  
+Typically PATTERNS should be  quoted  when grep is used in a shell command.
+```
